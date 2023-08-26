@@ -2,16 +2,13 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: 黃雪晶 first part of my domain name AT outlook.com
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: me/sit.jpg
   image_circular: false # crops the image to make it circular
-  address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  address:
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
@@ -19,8 +16,17 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a fresh PhD graduate in the [HKUPL Group](https://hkuplg.github.io/) from [The University of Hong Kong](https://www.hku.hk/),
+advised by
+[Dr. Bruno C. d. S. Oliveira](https://www.cs.hku.hk/people/academic-staff/bruno).
+I do research about type systems of programming languages.
+My [thesis](http://find.lib.hku.hk/record=alma991044649901903414) is about intersection type, union type, and the merge operator.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+After spending years on the western part of Hong Kong Island, I moved
+to a small village house in the New Territories with my boyfriend,
+Bingchen Gong. Our nights are occasionally filled with BBQs and
+hotpots, and recently, we've been playing host to our neighbor's
+cat. During my leisure hours, I find joy in cycling along the Shing
+Mun River and Tolo Harbour, or simply floating in the sea at Tai Mei Tuk.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Feel free to drop me an email. You may also find me on [Instagram](https://www.instagram.com/hxjxsnow/) or [facebook](https://www.facebook.com/HXJxSnow/).
