@@ -2,64 +2,38 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Xuejing Huang
     - name: Date of Birth
       value: 14th March 1879
     - name: Languages
-      value: English, German
+      value: Mandarin, Cantonese, English
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Ph.D., Programming Languages
+      institution: The University of Hong Kong
+      year: 2023
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - Type systems, subtyping algorithms, combine FP & OOP
+        - Advisor: Dr. Bruno C. d. S. Oliveira
+        - title: Taming the Merge Operator and Intersection Types.
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+            - External Examiners: Prof. Frank Pfenning, Prof. Ondřej Lhoták
+    - title: B.Sc., Computer Science and Technology
+      institution: Zhejiang University, Hangzhou, China
+      year: 2017
       description:
-        - Description 1.
-        - Description 2.
+        - Pursuit Science Class, Chu Kochen Honors College.
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Exchange Student
+      institution: Stockholm University
+      year: 2015 - 2016
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+        - Department of Computer and Systems Sciences
 
 - title: Open Source Projects
   type: time_table
@@ -71,19 +45,15 @@
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
-      items: 
-        - Nobel Prize in Physics 
-        - Matteucci Medal
-    - year: 2029
-      items: 
-        - Max Planck Medal
+    - year: 2017
+      items:
+        - Hong Kong PhD Fellowship
 
 - title: Academic Interests
   type: nested_list
   contents:
     - title: Topic 1.
-      items: 
+      items:
         - Description 1.
         - Description 2.
     - title: Topic 2.
