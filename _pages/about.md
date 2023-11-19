@@ -22,7 +22,8 @@ advised by
 I do research about type systems of programming languages.
 My [thesis](http://find.lib.hku.hk/record=alma991044649901903414) is about intersection type, union type, and the merge operator.
 
-After spending years on the western part of Hong Kong Island, I moved
+After spending years on the western part of Hong Kong Island
+[(photos)](/blog/2023/film-photo/), I moved
 to a small village house in the New Territories with my boyfriend,
 Bingchen Gong. Our nights are occasionally filled with BBQs and
 hotpots, and recently, we've been playing host to our neighbor's
