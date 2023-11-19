@@ -1,12 +1,11 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - xsnow
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - xsnow/bowtie_coq
+  - xsnow/TamingMerge
+  - xsnow/DistributingTypes
+  - andongfan/CP-Foundations
+  - baberrehman/disjoint-switches
+  - YeWenjia/TypedDirectedGradualTyping
+  - xsnow/ECOOP2020
