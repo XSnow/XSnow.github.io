@@ -1,11 +1,12 @@
 ---
 layout: post
 date: 2023-07-21 10:00:00+0800
+title: Congregation | HKU
 inline: false
 related_posts: false
 ---
 
-My PhD degree was conferred at the 210th [Congragation](https://www4.hku.hk/congreg/page/detail/1095) of HKU. :sparkles:
+My PhD degree was conferred at the 210th [Congregation](https://www4.hku.hk/congreg/page/detail/1095) of HKU. :sparkles:
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">

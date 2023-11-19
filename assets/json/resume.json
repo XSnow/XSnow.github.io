@@ -1,75 +1,126 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Xuejing Huang",
+    "label": "Ph.D.",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "slow@xsnow.live",
+    "url": "https://xsnow.live/",
+      "summary": "A recent Ph.D. graduate from HKU, skilled in programming language theory and type systems, with a passion for theoretical formalization in Coq and practical implementation in Haskell.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+        "address": "Shatin",
+        "city": "Hong Kong",
+        "countryCode": "HK",
+        "region": "Hong Kong"
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
       }
     ]
   },
   "work": [
-    {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": [
-        "Relativity"
-      ]
-    }
   ],
   "volunteer": [],
   "education": [
-    {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "",
+      {
+      "institution": "The University of Hong Kong",
+      "url": "https://www.hku.hk/",
+      "area": "",
+      "studyType": "Ph.D. in Computer Science",
+      "startDate": "2017-09",
+      "endDate": "2023-07",
       "courses": [
-        "Theory of Relativity"
+          "Area: Programming Languages",
+          "Advisor: Dr. Bruno C. d. S. Oliveira",
+          "Thesis: Taming the Merge Operator and Intersection Types",
+          "External Examiners: Prof. Frank Pfenning, Prof. Ondřej Lhoták"
       ]
-    }
+  },
+      {
+      "institution": "Zhejiang University",
+      "url": "https://www.zju.edu.cn/english/",
+      "area": "Pursuit Science Class, Chu Kochen Honors College",
+      "studyType": "B.Sc. in Computer Science and Technology",
+      "startDate": "2013-09",
+      "endDate": "2017-08",
+      "courses": [
+      ]
+  },
+      {
+      "institution": "Stockholm University",
+      "url": "https://www.su.se/english/",
+      "area": "Computer and Systems Sciences",
+      "studyType": "Exchange Student",
+      "startDate": "2015-01",
+      "endDate": "2016-12",
+      "courses": [
+      ]
+  }
   ],
   "awards": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    }
+      "title": "Hong Kong PhD Fellowship",
+      "date": "2017",
+      "awarder": "The Research Grants Council (RGC) of Hong Kong",
+      "summary": ""
+  },
+      {
+      "title": "First-Class Scholarship for Elite Students in Basic Sciences",
+      "date": "2013",
+      "awarder": "The Undergraduate School of Zhejiang University",
+      "summary": ""
+  },
+      {
+      "title": "First Prize in the National Olympiad in Informatics in Provinces (NOIP)",
+      "date": "2013",
+      "awarder": "The China Computer Federation",
+      "summary": ""
+  },
+      {
+      "title": "Bronze Award in Asia-Pacific Informatics Olympiad (APIO)",
+      "date": "2012",
+      "awarder": "The Japanese Committee for the International Olympiad in Informatics (IOI)​",
+      "summary": ""
+  }
   ],
   "certificates": [],
-  "publications": [],
+  "publications": [
+      {
+      "title": "Distributing intersection and union types with splits and duality (functional pearl)",
+      "authors": "Huang, Xuejing and Oliveira, Bruno C. d. S.",
+      "journal": "Proceedings of the ACM on Programming Languages",
+      "volume": "5",
+      "number": "ICFP",
+      "pages": "1--24",
+      "year": 2021,
+      "publisher": "ACM New York, NY, USA",
+      "doi": "10.1145/3473594"
+  },
+      {
+      "title": "Union Types with Disjoint Switches",
+      "authors": "Rehman, Baber and Huang, Xuejing and Xie, Ningning and Oliveira, Bruno C. d. S.",
+      "booktitle": "36th European Conference on Object-Oriented Programming (ECOOP 2022)",
+      "pages": "25:1--25:31",
+      "series": "Leibniz International Proceedings in Informatics (LIPIcs)",
+      "year": 2022,
+      "volume": "222",
+      "publisher": "Schloss Dagstuhl -- Leibniz-Zentrum für Informatik",
+      "doi": "10.4230/LIPIcs.ECOOP.2022.25"
+  }
+    ],
   "skills": [],
   "languages": [
-    {
-      "language": "German",
+      {
+      "language": "Mandarin",
       "fluency": "Native speaker"
-    },
-    {
+  },
+      {
       "language": "English",
       "fluency": "Fluent"
-    }
+  },
+      {
+      "language": "Cantonese",
+      "fluency": "Conversational"
+  }
   ],
   "interests": [],
   "references": [],

@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: 黃雪晶 first part of my domain name AT outlook.com
+subtitle: 黃雪晶 | first part of my domain name AT outlook.com
 
 profile:
   align: right
@@ -11,9 +11,9 @@ profile:
   address:
 
 news: true  # includes a list of news items
-latest_posts: true  # includes a list of the newest posts
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true  # includes social icons at the bottom of the page
+latest_posts: false  # includes a list of the newest posts
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: false  # includes social icons at the bottom of the page
 ---
 
 I am a fresh PhD graduate in the [HKUPL Group](https://hkuplg.github.io/) from [The University of Hong Kong](https://www.hku.hk/),

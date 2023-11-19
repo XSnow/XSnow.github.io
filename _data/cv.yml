@@ -3,20 +3,30 @@
   contents:
     - name: Full Name
       value: Xuejing Huang
-    - name: Date of Birth
-      value: 14th March 1879
+
+    - name: Email
+      value: slow AT xsnow.live
+
+    - name: URL
+      value: https://xsnow.live/
+
     - name: Languages
       value: Mandarin, Cantonese, English
+
+    - name: Summary
+      value: A recent Ph.D. graduate from HKU, skilled in programming language theory and type systems, with a passion for theoretical formalization in Coq and practical implementation in Haskell.
+
 
 - title: Education
   type: time_table
   contents:
-    - title: Ph.D., Programming Languages
+    - title: Ph.D., Computer Science
       institution: The University of Hong Kong
       year: 2023
+      area: Programming Languages
       description:
         - Type systems, subtyping algorithms, combine FP & OOP
-        - Advisor: Dr. Bruno C. d. S. Oliveira
+        - advisor: Dr. Bruno C. d. S. Oliveira
         - title: Taming the Merge Operator and Intersection Types.
           contents:
             - External Examiners: Prof. Frank Pfenning, Prof. Ondřej Lhoták
