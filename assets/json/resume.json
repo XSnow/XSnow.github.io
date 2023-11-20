@@ -83,30 +83,7 @@
   }
   ],
   "certificates": [],
-  "publications": [
-      {
-      "title": "Distributing intersection and union types with splits and duality (functional pearl)",
-      "authors": "Huang, Xuejing and Oliveira, Bruno C. d. S.",
-      "journal": "Proceedings of the ACM on Programming Languages",
-      "volume": "5",
-      "number": "ICFP",
-      "pages": "1--24",
-      "year": 2021,
-      "publisher": "ACM New York, NY, USA",
-      "doi": "10.1145/3473594"
-  },
-      {
-      "title": "Union Types with Disjoint Switches",
-      "authors": "Rehman, Baber and Huang, Xuejing and Xie, Ningning and Oliveira, Bruno C. d. S.",
-      "booktitle": "36th European Conference on Object-Oriented Programming (ECOOP 2022)",
-      "pages": "25:1--25:31",
-      "series": "Leibniz International Proceedings in Informatics (LIPIcs)",
-      "year": 2022,
-      "volume": "222",
-      "publisher": "Schloss Dagstuhl -- Leibniz-Zentrum für Informatik",
-      "doi": "10.4230/LIPIcs.ECOOP.2022.25"
-  }
-    ],
+  "publications": [],
   "skills": [],
   "languages": [
       {
