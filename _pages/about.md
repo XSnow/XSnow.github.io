@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: 黃雪晶 | first part of my domain name AT outlook.com
+subtitle: 黃雪晶 | slow AT xsnow.live
 
 profile:
   align: right
