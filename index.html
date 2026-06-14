@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Xuejing Huang — programming languages researcher, type systems, functional programming" />
+  <title>Xuejing Huang</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #ffffff;
+      --ink:    #111111;
+      --muted:  #555555;
+      --light:  #888888;
+      --rule:   #e0e0e0;
+      --accent: #1a56a0;
+      --serif:  'Source Serif 4', Georgia, serif;
+      --sans:   'Inter', system-ui, sans-serif;
+      --max:    720px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15.5px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── LAYOUT ── */
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.8rem;
+    }
+
+    /* ── HEADER ── */
+    #about {
+      padding-top: 3rem;
+      padding-bottom: 1.2rem;
+      display: grid;
+      grid-template-columns: 1fr 210px;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .profile-text h1 {
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .profile-subtitle {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .profile-bio {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      margin-bottom: 0.6rem;
+    }
+
+    .interests {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .profile-links {
+      font-size: 0.83rem;
+      margin-top: 0.9rem;
+      color: var(--muted);
+    }
+
+    .profile-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .profile-links a:hover { color: var(--accent); text-decoration: underline; }
+    .profile-links span { margin: 0 0.3rem; }
+
+    .profile-photo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .profile-photo {
+      width: 210px;
+      height: 280px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .profile-pronouns {
+      font-size: 0.72rem;
+      color: var(--light);
+      letter-spacing: 0.03em;
+    }
+
+    .profile-email {
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      margin-top: 0.15rem;
+    }
+    .profile-email a { color: var(--muted); }
+    .profile-email a:hover { color: var(--accent); text-decoration: none; }
+
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 2.2rem 0;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.35rem;
+      margin-bottom: 1.4rem;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .pub { font-size: 0.88rem; line-height: 1.6; }
+
+    .pub-venue-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 0.2rem;
+    }
+
+    .pub-venue-label a {
+      color: var(--light);
+      text-decoration: none;
+    }
+    .pub-venue-label a:hover { color: var(--accent); text-decoration: none; }
+
+    .pub-body {
+      padding-left: 0.9rem;
+      border-left: 2px solid var(--rule);
+    }
+
+    .pub-title {
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+    }
+
+    .pub-authors {
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 0.2rem;
+    }
+    .pub-authors strong { color: var(--ink); font-weight: 500; }
+
+    .pub-links {
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      margin-top: 0.25rem;
+    }
+
+    .pub-link {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .pub-link:hover { color: var(--accent); text-decoration: none; }
+
+    .pub-poster { margin-top: 0.75rem; }
+    .pub-poster img {
+      width: 100%;
+      max-width: 380px;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      display: block;
+    }
+    .pub-poster img:hover { opacity: 0.85; }
+
+    .badge {
+      display: inline;
+      font-size: 0.78rem;
+      color: var(--light);
+      font-weight: 400;
+      font-style: italic;
+      margin-left: 4px;
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 0 1rem;
+      font-size: 0.88rem;
+    }
+
+    .exp-date {
+      color: var(--light);
+      font-size: 0.8rem;
+      padding-top: 0.1rem;
+      line-height: 1.5;
+    }
+
+    .exp-role { font-weight: 500; color: var(--ink); margin-bottom: 0.1rem; }
+    .exp-org  { color: var(--muted); font-size: 0.84rem; margin-bottom: 0.2rem; }
+    .exp-desc { color: var(--muted); font-size: 0.84rem; line-height: 1.6; }
+
+    /* ── AWARDS ── */
+    .award-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .award-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 0 1rem;
+      font-size: 0.88rem;
+    }
+
+    .award-year { color: var(--light); font-size: 0.8rem; padding-top: 0.05rem; }
+    .award-name { font-weight: 500; color: var(--ink); }
+    .award-desc { color: var(--muted); font-size: 0.84rem; }
+
+    /* ── SERVICE ── */
+    .service-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+    }
+
+    .service-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0 1rem;
+    }
+
+    .service-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--light);
+      padding-top: 0.05rem;
+    }
+
+    .service-items { color: var(--muted); }
+
+    /* ── ART (collapsible) ── */
+    details.misc-section { padding: 0; }
+
+    details.misc-section summary {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid var(--rule);
+      padding: 2.2rem 0 0.35rem;
+      margin-bottom: 1.4rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      user-select: none;
+    }
+    details.misc-section summary::-webkit-details-marker { display: none; }
+    details.misc-section summary::after {
+      content: '▸';
+      font-size: 0.65rem;
+      color: var(--light);
+      font-family: var(--sans);
+      font-weight: 400;
+      margin-left: 0.2rem;
+    }
+    details.misc-section[open] summary::after { content: '▾'; }
+    details.misc-section summary:hover { color: var(--accent); }
+
+    .misc-body { padding-bottom: 2.5rem; }
+
+    .art-intro {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .art-poem-card {
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      padding: 1.6rem 2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .photo-section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 0.6rem;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      aspect-ratio: 3/2;
+      object-fit: cover;
+      display: block;
+      border-radius: 2px;
+    }
+
+    .photo-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.5rem;
+    }
+
+    .photo-strip-item img {
+      width: 100%;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      display: block;
+      border-radius: 2px;
+    }
+
+    .photo-caption {
+      font-size: 0.65rem;
+      color: var(--light);
+      margin-top: 0.25rem;
+      font-style: italic;
+      line-height: 1.3;
+    }
+
+    .poem-kind {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 0.6rem;
+    }
+
+    .poem-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.9rem;
+      color: var(--ink);
+    }
+
+    .poem-body {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 2;
+      white-space: pre-line;
+    }
+
+    .poem-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1.5rem 2rem 3.5rem;
+      font-size: 0.78rem;
+      color: var(--light);
+      border-top: 1px solid var(--rule);
+    }
+
+    footer a { color: var(--light); }
+    footer a:hover { color: var(--accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      #about { grid-template-columns: 1fr; padding-top: 2rem; }
+      .profile-photo { width: 120px; height: 150px; order: -1; }
+      .exp-item, .award-item, .service-item { grid-template-columns: 1fr; gap: 0.1rem; }
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-strip { grid-template-columns: repeat(3, 1fr); }
+      .poem-row { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <section id="about">
+    <div class="profile-text">
+      <h1>Xuejing Huang <span style="font-weight:300; font-size:1.2rem; color:var(--muted);">黄雪晶 · Snow</span></h1>
+      <p class="profile-email">xsnow<span> [at] </span>connect.hku.hk</p>
+      <p class="profile-bio">
+        I do research on type systems of programming languages.
+        From 2017 to 2023, I was in the <a href="https://hkuplg.github.io/">HKU PL Group</a>, advised by
+        <a href="https://www.cs.hku.hk/people/academic-staff/bruno">Bruno C. d. S. Oliveira</a>.
+        My <a href="http://find.lib.hku.hk/record=alma991044649901903414">thesis</a> is about intersection types, union types, and the merge operator.
+        After that, I was a postdoctoral researcher at <a href="https://www.irif.fr">IRIF</a>, Paris,
+        under the <a href="https://www.mathingp.fr/">MathInGreaterParis Fellowship Programme</a>.
+      </p>
+      <p class="profile-bio">
+        I currently work as a functional programmer (Haskell) at
+        <a href="https://dl.acm.org/doi/10.1145/3674633">Core Strats</a>,
+        <a href="https://www.sc.com">Standard Chartered</a>.
+      </p>
+      <p class="interests">
+        <strong>Research interests:</strong> type theory, subtyping, formal verification
+      </p>
+      <p class="profile-links">
+        <a href="https://scholar.google.com/citations?user=7O_lyzAAAAAJ" target="_blank">Scholar</a><span>·</span>
+        <a href="https://github.com/XSnow" target="_blank">GitHub</a><span>·</span>
+        <a href="https://dblp.org/pid/277/8934.html" target="_blank">DBLP</a><span>·</span>
+        <a href="https://www.linkedin.com/in/xuejingh/" target="_blank">LinkedIn</a>
+      </p>
+    </div>
+    <div class="profile-photo-wrap">
+      <img class="profile-photo" src="assets/img/me/profile.jpg" alt="Xuejing Huang" />
+      <div class="profile-pronouns">she/they</div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <div class="section" id="publications">
+    <div class="section-title">Publications</div>
+    <div class="pub-list">
+
+      <div class="pub">
+        <div class="pub-venue-label">TOPLAS 2025</div>
+        <div class="pub-body">
+          <div class="pub-title">Type-Safe Compilation of Dynamic Inheritance via Merging</div>
+          <div class="pub-authors">Yaozhu Sun, <strong>Xuejing Huang</strong>, and Bruno C. d. S. Oliveira</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://doi.org/10.1145/3765518" target="_blank">[doi]</a>
+            <a class="pub-link" href="https://github.com/yzyzsun/CP-next" target="_blank">[github]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-venue-label"><a href="https://2025.splashcon.org/track/splash-2025-oopsla">OOPSLA 2025</a></div>
+        <div class="pub-body">
+          <div class="pub-title">Liberating Merges via Apartness and Guarded Subtyping</div>
+          <div class="pub-authors">Han Xu, <strong>Xuejing Huang</strong>, and Bruno C. d. S. Oliveira</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://doi.org/10.1145/3763057" target="_blank">[doi]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-venue-label"><a href="https://popl23.sigplan.org/">POPL 2023</a></div>
+        <div class="pub-body">
+          <div class="pub-title">A Bowtie for a Beast: Overloading, Eta Expansion, and Extensible Data Types in F⋈</div>
+          <div class="pub-authors">Nick Rioux, <strong>Xuejing Huang</strong>, Bruno C. d. S. Oliveira, and Steve Zdancewic</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://doi.org/10.1145/3571211" target="_blank">[doi]</a>
+            <a class="pub-link" href="https://github.com/xsnow/bowtie_coq" target="_blank">[github]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-venue-label"><a href="https://popl23.sigplan.org/">POPL 2023</a></div>
+        <div class="pub-body">
+          <div class="pub-title">Making a Type Difference: Subtraction on Intersection Types as Generalized Record Operations</div>
+          <div class="pub-authors">Han Xu, <strong>Xuejing Huang</strong>, and Bruno C. d. S. Oliveira</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://doi.org/10.1145/3571224" target="_blank">[doi]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-venue-label"><a href="https://2022.ecoop.org/">ECOOP 2022</a></div>
+        <div class="pub-body">
+          <div class="pub-title">Direct Foundations for Compositional Programming <span class="badge">Co-first author</span></div>
+          <div class="pub-authors">Andong Fan*, <strong>Xuejing Huang*</strong>, Han Xu, Yaozhu Sun, and Bruno C. d. S. Oliveira</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://doi.org/10.4230/LIPIcs.ECOOP.2022.18" target="_blank">[doi]</a>
+            <a class="pub-link" href="https://doi.org/10.4230/DARTS.8.2.4" target="_blank">[artifact]</a>
+            <a class="pub-link" href="https://github.com/andongfan/CP-Foundations" target="_blank">[github]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-venue-label"><a href="https://2022.ecoop.org/">ECOOP 2022</a></div>
+        <div class="pub-body">
+          <div class="pub-title">Union Types with Disjoint Switches</div>
+          <div class="pub-authors">Baber Rehman, <strong>Xuejing Huang</strong>, Ningning Xie, and Bruno C. d. S. Oliveira</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://doi.org/10.4230/LIPIcs.ECOOP.2022.25" target="_blank">[doi]</a>
+            <a class="pub-link" href="https://doi.org/10.4230/DARTS.8.2.17" target="_blank">[artifact]</a>
+            <a class="pub-link" href="https://github.com/baberrehman/disjoint-switches" target="_blank">[github]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-venue-label"><a href="https://2021.ecoop.org/">ECOOP 2021</a></div>
+        <div class="pub-body">
+          <div class="pub-title">Type-directed Operational Semantics for Gradual Typing</div>
+          <div class="pub-authors">Wenjia Ye, Bruno C. d. S. Oliveira, and <strong>Xuejing Huang</strong></div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://doi.org/10.4230/LIPIcs.ECOOP.2021.12" target="_blank">[doi]</a>
+            <a class="pub-link" href="https://doi.org/10.4230/DARTS.7.2.9" target="_blank">[artifact]</a>
+            <a class="pub-link" href="https://github.com/YeWenjia/TypedDirectedGradualTyping" target="_blank">[github]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-venue-label"><a href="https://www.cambridge.org/core/journals/journal-of-functional-programming">JFP 2021</a></div>
+        <div class="pub-body">
+          <div class="pub-title">Taming the Merge Operator</div>
+          <div class="pub-authors"><strong>Xuejing Huang</strong>, Jinxu Zhao, and Bruno C. d. S. Oliveira</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://doi.org/10.1017/S0956796821000186" target="_blank">[doi]</a>
+            <a class="pub-link" href="https://github.com/xsnow/TamingMerge" target="_blank">[github]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-venue-label"><a href="https://icfp21.sigplan.org/">ICFP 2021</a></div>
+        <div class="pub-body">
+          <div class="pub-title">Distributing Intersection and Union Types with Splits and Duality (Functional Pearl)</div>
+          <div class="pub-authors"><strong>Xuejing Huang</strong> and Bruno C. d. S. Oliveira</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://doi.org/10.1145/3473594" target="_blank">[doi]</a>
+            <a class="pub-link" href="https://doi.org/10.1145/3473601" target="_blank">[artifact]</a>
+            <a class="pub-link" href="https://github.com/xsnow/DistributingTypes" target="_blank">[github]</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-venue-label"><a href="https://2020.ecoop.org/">ECOOP 2020</a></div>
+        <div class="pub-body">
+          <div class="pub-title">A Type-Directed Operational Semantics for a Calculus with a Merge Operator</div>
+          <div class="pub-authors"><strong>Xuejing Huang</strong> and Bruno C. d. S. Oliveira</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://doi.org/10.4230/LIPIcs.ECOOP.2020.26" target="_blank">[doi]</a>
+            <a class="pub-link" href="https://doi.org/10.4230/DARTS.6.2.9" target="_blank">[artifact]</a>
+            <a class="pub-link" href="https://github.com/xsnow/ECOOP2020" target="_blank">[github]</a>
+            <a class="pub-link" href="assets/img/ecoop2020-poster.jpg" target="_blank">[poster]</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- AWARDS -->
+  <div class="section" id="awards">
+    <div class="section-title">Honors &amp; Awards</div>
+    <div class="award-list">
+      <div class="award-item">
+        <div class="award-year">2024–2026</div>
+        <div class="award-body">
+          <div class="award-name">MathInGreaterParis Fellowship Programme</div>
+          <div class="award-desc">Co-funded by the Marie Skłodowska-Curie Actions.</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2017–2023</div>
+        <div class="award-body">
+          <div class="award-name">Hong Kong PhD Fellowship, Research Grants Council</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2017</div>
+        <div class="award-body">
+          <div class="award-name">Honours Bachelor's Degree in Computer Science</div>
+          <div class="award-desc"><a href="https://ckc.zju.edu.cn/ckcen/">Chu Kochen Honours College</a>, <a href="https://www.zju.edu.cn/english/">Zhejiang University</a>.</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">POPL 2023</div>
+        <div class="award-body">
+          <div class="award-name">SIGPLAN Professional Activities Committee (PAC) Grant</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2015–2016</div>
+        <div class="award-body">
+          <div class="award-name">China Scholarship Council (CSC) Grant</div>
+          <div class="award-desc">Full scholarship supporting one year of exchange studies at Stockholm University.</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2013–2014</div>
+        <div class="award-body">
+          <div class="award-name">First-Class Scholarship for Elite Students, Zhejiang University</a></div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2012</div>
+        <div class="award-body">
+          <div class="award-name">First Prize, National Olympiad in Informatics in Provinces (NOIP)</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2012</div>
+        <div class="award-body">
+          <div class="award-name">Bronze Award, Asia-Pacific Informatics Olympiad</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE -->
+  <div class="section" id="service">
+    <div class="section-title">Academic Service</div>
+    <div class="service-list">
+      <div class="service-item">
+        <div class="service-label">Co-organizer</div>
+        <div class="service-items"><a href="https://www.meetup.com/llvm-social-hong-kong/">LLVM Social Hong Kong (June 2026)</a></div>
+      </div>
+      <div class="service-item">
+        <div class="service-label">Program Committee</div>
+        <div class="service-items">PPDP'24, ECOOP'24</div>
+      </div>
+      <div class="service-item">
+        <div class="service-label">Artifact Evaluation</div>
+        <div class="service-items">POPL'24, ECOOP'24, ECOOP'25, ICFP'25</div>
+      </div>
+      <div class="service-item">
+        <div class="service-label">Session Chair</div>
+        <div class="service-items">Session Preview (Synthesis &amp; Semantics) at POPL'23</div>
+      </div>
+      <div class="service-item">
+        <div class="service-label">External Reviewer</div>
+        <div class="service-items">ECOOP'19, GPCE'22</div>
+      </div>
+      <div class="service-item">
+        <div class="service-label">Student Volunteer</div>
+        <div class="service-items">SIGGRAPH Asia'23, POPL'23</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISC / ART -->
+  <details class="misc-section" id="misc">
+    <summary>Misc.</summary>
+    <div class="misc-body">
+      <p class="art-intro">
+        Being connected to human society and to nature is essential for me. I do it with fear and bravery — I write. I taste. I make things with my hands. I have followed light across continents and followed currents into the cold. A drop of it is enough.
+      </p>
+
+      <div class="art-poem-card">
+        <div class="poem-kind">Poem</div>
+        <div class="poem-title">Aninipot</div>
+        <div class="poem-body">月亮在红树林纵火
+树缝溢出热浪
+火焰喷溅
+火花漂浮在漆黑的河面
+
+我们划向月亮的上游
+太慢
+巨大的圆月已从Abatan河上升起
+大过每一轮落日
+
+Vins说
+Aninipot
+我们低声复诵
+直到萤火飘来独木舟的船头
+
+群星黯淡
+水椰树缀满明灭的星火
+沉默的飞虫用光交流
+如水波起伏 同步闪烁
+
+潮水很低
+海蜗牛在潮间游走
+红树的气生根越过我们
+直指月亮
+
+河岸边 每隔十米
+就有一棵着火
+虫儿选择最美的树交欢
+我们在树下偷看</div>
+      </div>
+
+      <div class="photo-section-label">Photography — East Java, Indonesia, 2025</div>
+      <div class="photo-grid">
+        <img src="assets/img/photos/bromo-1.jpeg" alt="Pink-maned horse on the volcanic sand plain, Mount Bromo" />
+        <img src="assets/img/photos/bromo-2.jpeg" alt="Inside Kawah Ijen sulfur crater before dawn" />
+        <img src="assets/img/photos/bromo-3.jpeg" alt="Sulfur miner breaking rock at Kawah Ijen" />
+        <img src="assets/img/photos/bromo-4.jpeg" alt="At the crater rim, Kawah Ijen" />
+      </div>
+
+      <div class="photo-section-label">Life</div>
+      <div class="photo-strip">
+        <div class="photo-strip-item">
+          <img src="assets/img/me/drones.jpeg" alt="Building drones" title="Building drones" />
+        </div>
+        <div class="photo-strip-item">
+          <img src="assets/img/me/film-cropped.jpeg" alt="Developed film" title="Developed film" />
+        </div>
+        <div class="photo-strip-item">
+          <img src="assets/img/me/cook-cropped.jpeg" alt="Cooking in Paris" title="Cooking in Paris" />
+        </div>
+        <div class="photo-strip-item">
+          <img src="assets/img/me/ski-cropped.jpeg" alt="Skiing in the Alps" title="Skiing in the Alps" />
+        </div>
+        <div class="photo-strip-item">
+          <img src="assets/img/me/surf-cropped.jpeg" alt="Learning to surf" title="Learning to surf" />
+        </div>
+        <div class="photo-strip-item">
+          <img src="assets/img/me/swim.jpeg" alt="After swimming, Lamma Island" title="After swimming, Lamma Island" />
+        </div>
+      </div>
+    </div>
+  </details>
+
+</div><!-- /page -->
+
+<footer>
+  Xuejing Huang &nbsp;·&nbsp; Snow &nbsp;·&nbsp; Last updated June 2026
+</footer>
+
+</body>
+</html>
